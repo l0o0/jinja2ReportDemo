@@ -1,0 +1,11 @@
+{% extends 'base.html' %} 
+
+{% block content}
+{% for dir in dir_tree['children'][0]['children'] %}
+{% if dir['name'] == 'dirB1' %}
+    {% include 'dirB1.html' %}
+    {% if  %}
+{% elif dir['name'] == 'dirB2' %}
+    {% include 'dirB2.html' %}
+{% endif %}
+{% endblock %}
