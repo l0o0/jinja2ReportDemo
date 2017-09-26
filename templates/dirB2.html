@@ -1,0 +1,12 @@
+{% import "table.html" as Table %}
+{% if 'dirB2' in dirA_tree['dirs'] %}
+<h2>This is dirB2 demo.</h2>
+<p>There is file2.txt in this folder.</p>
+{% else %}
+<h2>This is dirB2 demo is missing.</h2>
+<p>Nothing left.</p>
+{% endif %}
+
+<h3>{{ dirA_tree['dirs']['dirB2']['files'][0] }}</h3>
+{{ Table.make_table(tophat) }}
+

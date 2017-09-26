@@ -1,11 +1,15 @@
 {% extends 'base.html' %} 
 
-{% block content}
-{% for dir in dir_tree['children'][0]['children'] %}
-{% if dir['name'] == 'dirB1' %}
+{% block content %}
+
+<!-- 为dirA_tree赋值，用了set关键字 -->
+{% set dirA_tree = dir_tree['dirs']['dirA'] %}
+{% for dir in dirA_tree['dirs'] %}
+{% if dir == 'dirB1' %}
     {% include 'dirB1.html' %}
-    {% if  %}
-{% elif dir['name'] == 'dirB2' %}
+{% elif dir == 'dirB2' %}
     {% include 'dirB2.html' %}
 {% endif %}
+{% endfor %}
+
 {% endblock %}
